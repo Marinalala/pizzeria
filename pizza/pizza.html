@@ -1,12 +1,62 @@
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="pizza_style.css">
+    <script src="../jquery-3.4.1.min.js"></script>
+    <title>pizza</title>
 </head>
+
 <body>
-    <div id="titre">Pizzeria</div>git 
+
+    <header>
+        <div id="menu">---</div>
+        <div id="titre">
+            <div id="nom_pizza">Nom Pizzeria</div>
+            <div id="adresse">Adresse</div>
+            <div id="tel">Telephone</div>
+        </div>
+        <div id="connexion">O</div>
+    </header>
+
+    <main>
+        <div class="pizza">
+            <div class="titre_pizza"><span>Pizza en carton</span></div>
+            <div class="img_pizza"></div>
+            <div class="taille">
+                <span>S</span><input type="radio" name="taille" value="S">
+                <span>M</span><input type="radio" name="taille" value="M">
+                <span>L</span><input type="radio" name="taille" value="L">
+                <span>XL</span><input type="radio" name="taille" value="XL">
+            </div>
+            <div class="nb_pizza">
+                <span>Nombre de pizza : </span>
+                <select class="nom_pizza">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                    </select>
+            </div>
+            <div>
+                <button class="ajouter" onclick="ajoutPizza()">Ajouter</button>
+            </div>
+        </div>
+                    
+    </main>
+
+    <footer>
+           <a href="../commande/commande.html"> <button id="passer_commande">Passer commande</button></a>
+    </footer>
+
 </body>
+    <script src="pizza_logic.js"></script>
 </html>
