@@ -1,0 +1,11 @@
+FRONT:
+-Accueil
+-Nos pizza (liste pizza)
+-Passer commande
+-Admin (changer fidélité / réduction)
+
+BACK:
+-commande.php
+-getPizza.php
+-setReductionSeuil.php
+-getReductionSeuil.php
