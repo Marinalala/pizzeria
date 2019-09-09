@@ -4,7 +4,7 @@ $( document ).ready(affichePizza());
 function affichePizza() {
 
    $.ajax({
-       url: "http://localhost/pizzeria/admin_server.php",
+       url: "http://localhost/pizzeria/liste_pizza.php",
        type: 'GET',
        success: function success(result) {
            result = JSON.parse(result);
@@ -15,15 +15,15 @@ function affichePizza() {
             // Nom pizza
             + result[i].nom +`
             </span></div>
-            <div class="img_pizza"><u>` 
+            <div class="img_pizza"><u><img src="` 
             // Nom pizza
-            + result[i].image +`</u>
+            + result[i].image +`"></u>
             </div>
             <div class="taille">
-                <span>S</span><input type="radio" name="taille" value="S">
-                <span>M</span><input type="radio" name="taille" value="M">
-                <span>L</span><input type="radio" name="taille" value="L">
-                <span>XL</span><input type="radio" name="taille" value="XL">
+                <span>S</span><input type="radio" name="taille_`+result[i].id+`" value="S">
+                <span>M</span><input type="radio" name="taille`+result[i].id+`" value="M">
+                <span>L</span><input type="radio" name="taille`+result[i].id+`" value="L">
+                <span>XL</span><input type="radio" name="taille`+result[i].id+`" value="XL">
             </div>
             <div class="nb_pizza">
                 <span>Nombre de pizza : </span>
@@ -41,7 +41,7 @@ function affichePizza() {
                     </select>
             </div>
             <div>
-                <button class="ajouter" onclick="ajoutPizza()">Ajouter</button>
+                <button class="ajouter" onclick="ajoutPizza(`+result[i].id+`)">Ajouter</button>
             </div>
         </div>
                `);
@@ -55,7 +55,7 @@ function affichePizza() {
 
 }
 
-function ajoutPizza() {    
+function ajoutPizza(idPizza) {    
    var taille = $('[name="taille"]:checked').val();
    var nb_pizza = $('option:selected').val();
    alert(taille);

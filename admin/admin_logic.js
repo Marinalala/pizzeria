@@ -28,7 +28,7 @@ function ajoutPizza() {
 
 function affichePizza() {
 
-    $.ajax({
+    /*$.ajax({
         url: "http://localhost/pizzeria/admin_server.php",
         type: 'GET',
         success: function success(result) {
@@ -60,6 +60,6 @@ function affichePizza() {
         error: function error(erreur) {
             console.log(erreur);
         },
-    });
+    });*/
 
 }

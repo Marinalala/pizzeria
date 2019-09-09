@@ -11,7 +11,7 @@ flex-direction: row;
 justify-content: space-between;
 }
 
-main {    
+.liste {    
     width: 95vw;
 
 display: flex;

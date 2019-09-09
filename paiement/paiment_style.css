@@ -2,52 +2,7 @@
     font-family: "Ma Super Font";
     src: url('../font/Paladise.ttf');
 }
-header{
-    display: flex;
-    justify-content: space-between;
 
-    width: 100vw;
-    height : 7vw;
-}
-#menu{
-    background-image: url(../img/menu.png);
-    background-repeat: no-repeat;
-    background-size: 3vw;
-    width: 5vw;
-    height: 5vw;
-    padding: 0;
-}
-#titre{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-image: url(../camion-pizza.jpg);
-    font-family: "Ma Super Font";
-}
-.nom{
-    font-size: 3em;
-    padding: 0;
-    margin: -15;
-}
-.tel{
-    font-size: 1.6em;
-    padding: 0;
-    margin: -15;
-}
-.adress{
-    font-size: 1.5em;
-    padding: 0;
-    margin: 0;
-}
-#connexion{
-    background-image: url(../img/silhouette.png);
-    background-repeat: no-repeat;
-    background-size: 3vw;
-    width: 5vw;
-    height: 5vw;
-    padding: 0;
-}
 #corps{
     display: flex;
     justify-content: space-around;
@@ -68,16 +23,20 @@ header{
     background-color: antiquewhite;
     font-size: 2em;
     width: 35vw;
-    height: 25vw;
+    height: 30vw;
 }
+
 .adresse{
     width: 20vw;
-    height: 8vw;
+    height: 6vw;
 }
 .heure{
     margin-top: 2vw;
     width: 20vw;
     height: 3vw;
+}
+.view{
+    width: 9.6vw;
 }
 .retrait{
     display: flex;
@@ -87,7 +46,7 @@ header{
     background-color: antiquewhite;
     font-size: 2em;
     width: 35vw;
-    height: 25vw;
+    height: 20vw;
 }
 .valider{
     margin-top: 2vw;
