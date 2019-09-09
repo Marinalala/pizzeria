@@ -1,31 +1,18 @@
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="index_style.css">
+    <script src="../jquery-3.4.1.min.js"></script>
     <title>Document</title>
 </head>
+
 <body>
-    <header>
-        <div id="menu">
-            <div class="dropdown">
-                <div class="dropdown-content">
-                  <a href="../accueil/index.html">Accueil</a>
-                  <a href="../pizza/pizza.html">Pizza</a>
-                  <a href="../admin/admin.html">Administrateur</a>
-                </div>
-            </div>
-        </div>
-        <div id="titre">
-            <div class="nom">Paola Pizza</div>
-            <div class="tel">06.11.12.13.14</div>
-            <div class="adress">1 rue de Bone - 84000 AVIGNON</div>
-        </div>
-        <a href="../connexion/connexion.html"><div id="connexion"><img src="../silhouette.png" alt=""></div></a>
-    </header>
+    <header></header>
     <div id="corps">
-        <div class="info">News du mois</div>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/RmG-9ePy5Gw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <div class="prix">
             <div id="taille"><img src="../img/taille-pizza-palace.png" alt=""></div>
             <div class="s">S = 6 €</div>
@@ -35,5 +22,11 @@
         </div>
     </div>
 </body>
+
+<script>
+    $(document).ready(function () {
+        $("header").load("../header.html");
+    });   
+</script>
 
 </html>

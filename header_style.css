@@ -1,0 +1,49 @@
+@font-face{
+    font-family: "Ma Super Font";
+    src: url('font/Paladise.ttf');
+}
+header{
+    display: flex;
+    justify-content: space-between;
+
+    width: 100vw;
+    height : 7vw;
+}
+#menu{
+    background-image: url(img/menu.png);
+    background-repeat: no-repeat;
+    background-size: 3vw;
+    width: 5vw;
+    height: 5vw;
+    padding: 0;
+}
+#titre{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: "Ma Super Font";
+}
+.nom{
+    font-size: 3em;
+    padding: 0;
+    margin: -15;
+}
+.tel{
+    font-size: 1.6em;
+    padding: 0;
+    margin: -15;
+}
+.adress{
+    font-size: 1.5em;
+    padding: 0;
+    margin: 0;
+}
+#connexion{
+    background-image: url(img/silhouette.png);
+    background-repeat: no-repeat;
+    background-size: 3vw;
+    width: 5vw;
+    height: 5vw;
+    padding: 0;
+}
