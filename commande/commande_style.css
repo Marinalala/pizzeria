@@ -1,0 +1,11 @@
+#corps{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-image: url(../img/mur-de-pierre-moderne.png);
+    background-repeat: no-repeat;
+    background-size: 100vw;
+    font-family: "Ma Super Font";
+    width: 100vw;
+    height: 55vw;
+}
