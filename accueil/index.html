@@ -1,5 +1,4 @@
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,10 +6,17 @@
     <link rel="stylesheet" href="index_style.css">
     <title>Document</title>
 </head>
-
 <body>
     <header>
-        <div id="menu"></div>
+        <div id="menu">
+            <div class="dropdown">
+                <div class="dropdown-content">
+                  <a href="../index.html">Accueil</a>
+                  <a href="pizza/pizza.html">Pizza</a>
+                  <a href="../admin.html">Administrateur</a>
+                </div>
+            </div>
+        </div>
         <div id="titre">
             <div class="nom">Paola Pizza</div>
             <div class="tel">06.11.12.13.14</div>
@@ -20,7 +26,12 @@
     </header>
     <div id="corps">
         <div class="info">News du mois</div>
-        <div class="prix">Taille pizza</div>
+        <div class="prix">Taille pizza
+            <div>S</div>
+            <div>M</div>
+            <div>L</div>
+            <div>XL</div>
+        </div>
     </div>
 </body>
 

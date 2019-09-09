@@ -1,12 +1,48 @@
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="paiment_style.css">
     <title>Document</title>
 </head>
+
 <body>
-    <div id="titre">Pizzeria</div>git 
+    <header>
+        <div id="menu">
+            <div class="dropdown">
+                <div class="dropdown-content">
+                    <a href="#">Accueil</a>
+                    <a href="#">Pizza</a>
+                    <a href="#">Administrateur</a>
+                </div>
+            </div>
+        </div>
+        <div id="titre">
+            <div class="nom">Paola Pizza</div>
+            <div class="tel">06.11.12.13.14</div>
+            <div class="adress">1 rue de Bone - 84000 AVIGNON</div>
+        </div>
+        <div id="connexion"><img src="../silhouette.png" alt=""></div>
+    </header>
+    <div id="corps">
+        <div class="livraison">
+            <div class="coche"><input type="radio" name="cocher" value="livraison" checked>Livraison</div>
+            <input type="text" name="adresse" class="adresse" placeholder="adresse">
+            <input type="date" name="heure" class="date" placeholder="heure de retrait" min="2019-09-09"
+                max="2119-12-31">
+            <input type="time" name="heure" class="hour" min="11:00" max="22:00" required>
+            <input type="submit" name="valider" class="valider" placeholder="Valider">
+        </div>
+        <div class="retrait">
+            <div class="coche"><input type="radio" name="cocher" value="retrait">Retrait/Sur place</div>
+            <input type="date" name="heure" class="date" placeholder="heure de retrait" min="2019-09-09"
+                max="2119-12-31">
+            <input type="time" name="heure" class="hour" min="11:00" max="22:00" required>
+            <input type="submit" name="valider" class="valider" placeholder="Valider">
+        </div>
+    </div>
 </body>
+
 </html>
