@@ -1,5 +1,5 @@
 <?php
-
+header("Access-Control-Allow-Origin: *");
 // TODO : POur corriger les erreurs de nom de domaine placer vos fichier dans le dossier WWW ou HTDOCS
 
 // On récupere les valeurs envoyé par la requete AJAX / formulaire
@@ -8,7 +8,7 @@ $fname = $_POST['fname'];
 $adress = $_POST['adress'];
 $email = $_POST['email'];
 $phone = $_POST['phone'];
-$password = $_POST['password'];
+$password = $_POST['pass'];
 
 // Vérifier que toutes les informations ont bien été envoyé
 if (!$name || !$fname || !$adress || !$email || !$phone || !$password) {
@@ -28,28 +28,17 @@ $hash = password_hash($password, PASSWORD_DEFAULT);
 // Il faut établir une connexion avec la base de donnée
 $connection = new mysqli("localhost", "root", "", "pizzeria");
 // Il faut préparer la requete SQL
-$request = $connection->prepare("INSERT INTO client (name, fname, adress, email, phone, password) VALUES (?, ?, ?, ?,?,?)");
+$request = $connection->prepare("INSERT INTO client (nom, fname, adresse, email, tel, password) VALUES (?, ?, ?, ?,?,?)");
 // On renseigne les valeurs dynamiques de la requete
-$request->bind_param("ssssss", $email, $hash);
+$request->bind_param("ssssss", $name, $fname, $adress, $email, $phone, $hash);
 // On execute la requete
 $request->execute();
 // On ferme la connexion avec la base de donnée et la requette
 $request->close();
 $connection->close();
 
-
-if (password_verify($password, $bdd_password)) {
-    $tab = [
-        'valid' => true,
-        'message' => "Inscription réussi !",
-        'redirect' => "../pizza/pizza.html"
-    ];
-    echo json_encode($tab);
-} else {
-    $tab = [
-        'valid' => true,
-        'message' => "Inscription réussi !",
-        'redirect' => null
-    ];
-    echo json_encode($tab);
-}
+$tab = [
+    'message' => "Inscription réussi !",
+    'redirect' => "../accueil/index.html"
+];
+echo json_encode($tab);
