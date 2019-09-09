@@ -12,13 +12,21 @@
 <body>
 
     <header>
-        <div id="menu">---</div>
-        <div id="titre">
-            <div id="nom_pizzeria">Nom Pizzeria</div>
-            <div id="adresse">Adresse</div>
-            <div id="tel">Telephone</div>
+        <div id="menu">
+            <div class="dropdown">
+                <div class="dropdown-content">
+                    <a href="../accueil/index.html">Accueil</a>
+                    <a href="../pizza/pizza.html">Pizza</a>
+                    <a href="../admin/admin.html">Administrateur</a>
+                </div>
+            </div>
         </div>
-        <div id="connexion">O</div>
+        <div id="titre">
+            <div class="nom">Paola Pizza</div>
+            <div class="tel">06.11.12.13.14</div>
+            <div class="adress">1 rue de Bone - 84000 AVIGNON</div>
+        </div>
+        <div id="connexion"><img src="../silhouette.png" alt=""></div>
     </header>
 
     <main>
@@ -32,7 +40,7 @@
                 </div>
             </div>
 
-            <div>
+            <div class="liste">
                 <div class="liste_pizza">
                     <input type="text" class="liste_nom_pizza" value="Nom de la Pizza">
                     <div class="row_description">
@@ -40,7 +48,7 @@
                             <input type="text" class="liste_url_pizza" value="Url de l'image de la pizza">
                             <input type="text" class="liste_description_pizza" value="Description de la Pizza">
                         </div>
-                        <img src="../img/pizza_icon.jpg" class="liste_image_pizza">
+                        <img src="https://static.cuisineaz.com/400x320/i96018-pizza-reine.jpg" class="liste_image_pizza">
                     </div>
                 </div>
             </div>
