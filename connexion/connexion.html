@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="connexion_style.css">
+    <script type="text/javascript" src="../jquery-3.4.1.min.js"></script>
     <title>Document</title>
 </head>
 <body>  
@@ -22,9 +23,14 @@
     <div class="input">
  <input type="email" name="email" class="box" id="email" value=""  placeholder="Adresse mail"/>
  <input type="password" name="password" class="box" id="password"  placeholder="Mot de Passe"/>
- <button id="valider" onclick="recupDesDonnees()" type="submit">Valider</button> 
- </div>
-
+ <button id="valider" onclick="recupDesDonnees()" type="submit">Valider</button>
 </div>
+<div id="inscription">
+    <span>Pas inscrit?</span>
+    <a href= "../inscription/inscription.html">S'inscrire</a> 
+</div>
+</div>
+    
+<script type="text/javascript" src="connexion_logic.js"></script> 
 </body>
 </html>
