@@ -10,47 +10,27 @@
 </head>
 
 <body>
-
-    <header>
-        <div id="menu">---</div>
-        <div id="titre">
-            <div id="nom_pizza">Nom Pizzeria</div>
-            <div id="adresse">Adresse</div>
-            <div id="tel">Telephone</div>
-        </div>
-        <div id="connexion">O</div>
-    </header>
+        <header>
+                <div id="menu">
+                    <div class="dropdown">
+                        <div class="dropdown-content">
+                          <a href="../accueil/index.html">Accueil</a>
+                          <a href="../pizza/pizza.html">Pizza</a>
+                          <a href="../admin/admin.html">Administrateur</a>
+                        </div>
+                    </div>
+                </div>
+                <div id="titre">
+                    <div class="nom">Paola Pizza</div>
+                    <div class="tel">06.11.12.13.14</div>
+                    <div class="adress">1 rue de Bone - 84000 AVIGNON</div>
+                </div>
+                <div id="connexion"><img src="../silhouette.png" alt=""></div>
+            </header>
 
     <main>
-        <div class="pizza">
-            <div class="titre_pizza"><span>Pizza en carton</span></div>
-            <div class="img_pizza"></div>
-            <div class="taille">
-                <span>S</span><input type="radio" name="taille" value="S">
-                <span>M</span><input type="radio" name="taille" value="M">
-                <span>L</span><input type="radio" name="taille" value="L">
-                <span>XL</span><input type="radio" name="taille" value="XL">
-            </div>
-            <div class="nb_pizza">
-                <span>Nombre de pizza : </span>
-                <select class="nom_pizza">
-                        <option value="0">0</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                    </select>
-            </div>
-            <div>
-                <button class="ajouter" onclick="ajoutPizza()">Ajouter</button>
-            </div>
-        </div>
-                    
+        <div class="liste">
+        </div>     
     </main>
 
     <footer>
