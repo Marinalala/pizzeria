@@ -21,18 +21,17 @@ main {
 display: flex;
 flex-direction: row;
 justify-content: space-between;
-flex-wrap: wrap;
-}
+flex-wrap: wrap;}
 
 .pizza {
     width: 18vw;
     height: 45vh;
     margin: 6vw;
+    border: black 1px solid;
 
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    border: black 1px solid;
 }
 .titre_pizza{
     text-align: center;
