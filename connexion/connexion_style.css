@@ -80,7 +80,6 @@
   }
 
   button{
-    
       height:6vh;
       width: 5vw;
   }
@@ -89,7 +88,4 @@
     display: flex;
     justify-content: center;
     font-size:1.8rem;
-
-   
-    
   }

@@ -6,7 +6,6 @@
 $nom = $_POST['nom'];
 $image = $_POST['image'];
 
-
 // Il faut établir une connexion avec la base de donnée
 $connection = new mysqli("localhost", "root", "", "pizza");
 // Il faut préparer la requete SQL

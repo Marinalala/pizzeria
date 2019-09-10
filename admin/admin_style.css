@@ -2,7 +2,6 @@
     border: black 1px solid;
 } */
 
-
 header {
     width: 95vw; 
     height: 15vh;
@@ -18,7 +17,7 @@ main {
 display: flex;
 flex-direction: row;
 justify-content: space-between;
-flex-wrap: wrap;
+flex-wrap: wrap;   
 }
 
 .pizza {
@@ -32,6 +31,7 @@ flex-wrap: wrap;
     justify-content: space-between;
     flex-direction: column;
 }
+
 
 .ajout_nom_pizza, .ajout_image_pizza, .ajout_description_pizza  {    
     text-align: center;
@@ -70,6 +70,11 @@ flex-wrap: wrap;
 
 .row_description {
     display: flex;
+}
+.modifier, .supprimer {
+    margin-top: 1vh;
+    width: 13.5vw;
+    
 }
 
 
