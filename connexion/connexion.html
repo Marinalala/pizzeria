@@ -1,4 +1,5 @@
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,30 +8,31 @@
     <script type="text/javascript" src="../jquery-3.4.1.min.js"></script>
     <title>Document</title>
 </head>
-<body>  
+
+<body>
     <header>
-        <div id="menu"></div>
-        <div id="titre">
-            <div class="nom">Paola Pizza</div>
-            <div class="tel">06.11.12.13.14</div>
-            <div class="adress">1 rue de Bone - 84000 AVIGNON</div>
-        </div>
-        </div>
-        <div id="connexion"><img src="../silhouette.png" alt=""></div>
+
     </header>
 
     <div id="corps">
-    <div class="input">
- <input type="email" name="email" class="box" id="email" value=""  placeholder="Adresse mail"/>
- <input type="password" name="password" class="box" id="password"  placeholder="Mot de Passe"/>
- <button id="valider" onclick="recupDesDonnees()" type="submit">Valider</button>
-</div>
-<div id="inscription">
-    <span>Pas inscrit?</span>
-    <a href= "../inscription/inscription.html">S'inscrire</a> 
-</div>
-</div>
-    
-<script type="text/javascript" src="connexion_logic.js"></script> 
+        <div class="input">
+            <input type="email" name="email" class="box" id="email" value="" placeholder="Adresse mail" />
+            <input type="password" name="password" class="box" id="password" placeholder="Mot de Passe" />
+            <button id="valider" onclick="recupDesDonnees()" type="submit">Valider</button>
+        </div>
+        <div id="inscription">
+            <span>Pas inscrit?</span>
+            <a href="../inscription/inscription.html">S'inscrire</a>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="connexion_logic.js"></script>
 </body>
+
+<script>
+    $(document).ready(function () {
+        $("header").load("../header.html");
+    });   
+</script>
+
 </html>

@@ -1,52 +1,53 @@
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="inscription_style.css">
-    <script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="../jquery-3.4.1.min.js"></script>
     <title>Document</title>
 </head>
+
 <body>
-    <header>
-        <div id="menu"></div>
-        <div id="titre">
-            <div class="nom">Paola Pizza</div>
-            <div class="tel">06.11.12.13.14</div>
-            <div class="adress">1 rue de Bone - 84000 AVIGNON</div>
+    <header></header>
+
+    <div id="corps">
+
+        <div class="case">
+            <input type="text" id="name" class="box" name="name" placeholder="Nom" />
         </div>
-        <div id="connexion"><img src="../silhouette.png" alt=""></div>
-    </header>
 
-<div id="corps">
+        <div class="case">
+            <input type="text" id="fname" class="box" name="fname" placeholder="Prénom" />
+        </div>
 
-<div class="case">
-<input type="text" id="name" class="box" name="name" placeholder="Nom" />
-</div>
+        <div class="case">
+            <input type="email" id="email" class="box" name="email" placeholder=" Adresse mail" />
+        </div>
 
-<div class="case">
-<input type="text" id="fname" class="box" name="fname" placeholder="Prénom" />
-</div>
+        <div class="case">
+            <input type="text" id="adress" class="box" name="adress" placeholder="Adresse" />
+        </div>
 
-<div class="case">
-<input type="email" id="email" class="box" name="email" placeholder=" Adresse mail" />
-</div>
+        <div class="case">
+            <input type="number" id="phone" class="box" name="phone" placeholder="Numero Téléphone" />
+        </div>
 
-<div class="case">
-<input type="text" id="adress" class="box" name="adress" placeholder="Adresse" />
-</div>
+        <div class="case">
+            <input type="password" id="pass" class="box" name="pass" placeholder="Mot de Passe" />
+        </div>
 
-<div class="case">
-<input type="number" id="phone" class="box" name="phone" placeholder="Numero Téléphone" />
-</div>
+        <button id="valider" onclick="recupDesDonnees()" type="submit">Valider</button>
+    </div>
 
-<div class="case">
-<input type="password" id="pass" class="box" name="pass" placeholder="Mot de Passe" />
-</div>
-
-<button id="valider" onclick="recupDesDonnees()" type="submit">Valider</button> 
-</div>
-
-<script type="text/javascript" src="inscription_logic.js".js"></script>
+    <script type="text/javascript" src="inscription_logic.js" .js"></script>
 </body>
+
+<script>
+    $(document).ready(function () {
+        $("header").load("../header.html");
+    });   
+</script>
+
 </html>
