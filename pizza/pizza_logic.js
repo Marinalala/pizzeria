@@ -4,7 +4,7 @@ $( document ).ready(affichePizza());
 function affichePizza() {
 
    $.ajax({
-       url: "http://localhost/pizzeria/liste_pizza.php",
+       url: "http://localhost/PIZZERIA/pizzeria/pizzeria_php/liste_pizza.php",
        type: 'GET',
        success: function success(result) {
            result = JSON.parse(result);

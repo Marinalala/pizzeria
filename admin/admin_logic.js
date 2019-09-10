@@ -8,7 +8,7 @@ function ajoutPizza() {
 
 
     $.ajax({
-        url: "http://localhost/pizzeria/admin_server.php",
+        url: "http://localhost/PIZZERIA/pizzeria/pizzeria_php/admin_server.php",
         type: "POST",
         data: {
             nom: nom,
