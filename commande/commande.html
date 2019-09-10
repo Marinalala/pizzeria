@@ -4,14 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="commande_style.css">
+    <link rel="stylesheet" href="../commande_style.css">
     <script src="../jquery-3.4.1.min.js"></script>
     <title>Document</title>
 </head>
 
 <body>
     <header></header>
-    <div id="titre">Pizzeria</div>
+    <div id="corps">
+        <div id="retour">Retour</div>
+        <div id="titre">
+            <div class="nom"></div>
+            <div class="taille"></div>
+            <div class="quantite"></div>
+            <div class="total"></div>
+            <div class="poubelle"></div>
+        </div>
+        <div id="commande"></div>
+        <div id="totaux"></div>
+        <div id="payer"></div>
+    </div>
 </body>
 <script>
     $(document).ready(function () {

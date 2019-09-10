@@ -10,23 +10,7 @@
 </head>
 
 <body>
-        <header>
-                <div id="menu">
-                    <div class="dropdown">
-                        <div class="dropdown-content">
-                          <a href="../accueil/index.html">Accueil</a>
-                          <a href="../pizza/pizza.html">Pizza</a>
-                          <a href="../admin/admin.html">Administrateur</a>
-                        </div>
-                    </div>
-                </div>
-                <div id="titre">
-                    <div class="nom">Paola Pizza</div>
-                    <div class="tel">06.11.12.13.14</div>
-                    <div class="adress">1 rue de Bone - 84000 AVIGNON</div>
-                </div>
-                <div id="connexion"><img src="../silhouette.png" alt=""></div>
-            </header>
+        <header></header>
 
     <main>
         <div class="liste">
@@ -39,4 +23,9 @@
 
 </body>
     <script src="pizza_logic.js"></script>
+    <script>
+            $(document).ready(function () {
+                $("header").load("../header.html");
+            });   
+    </script>
 </html>
