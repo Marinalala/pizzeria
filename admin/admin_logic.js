@@ -41,7 +41,7 @@ function ajoutPizza() {
 function affichePizza() {
 
     $.ajax({
-        url: "http://localhost/pizzeria/liste_pizza.php",
+        url: "http://localhost/PIZZERIA/pizzeria/pizzeria_php/liste_pizza.php",
         type: 'GET',
         success: function success(result) {
             result = JSON.parse(result);
@@ -87,7 +87,7 @@ function affichePizza() {
 function supprimer(id) {
 
     $.ajax({
-        url: "http://localhost/pizzeria/delete_pizza.php",
+        url: "http://localhost/PIZZERIA/pizzeria/pizzeria_php/delete_pizza.php",
         type: "POST",
         data: {
             id: id,
@@ -107,14 +107,14 @@ function supprimer(id) {
 // Modifier le nom, l'image et la description de la pizza
 function modifier(id) {
     $.ajax({
-        url: "http://localhost/pizzeria/liste_pizza.php",
+        url: "http://localhost/PIZZERIA/pizzeria/pizzeria_php/liste_pizza.php",
         type: 'GET',
         success: function success(result) {
             result = JSON.parse(result);  
             for (var i = 0; i < result.length; i++) {
                     if (i == id){
                         $.ajax({
-                            url: "http://localhost/pizzeria/modify_pizza.php",
+                            url: "http://localhost/PIZZERIA/pizzeria/pizzeria_php/modify_pizza.php",
                             type: "POST",
                             data: {
                                 id: result[i].id,
