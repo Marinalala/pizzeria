@@ -21,9 +21,9 @@ function affichePizza() {
             </div>
             <div class="taille">
                 <span>S</span><input type="radio" name="taille_`+result[i].id+`" value="S">
-                <span>M</span><input type="radio" name="taille`+result[i].id+`" value="M">
-                <span>L</span><input type="radio" name="taille`+result[i].id+`" value="L">
-                <span>XL</span><input type="radio" name="taille`+result[i].id+`" value="XL">
+                <span>M</span><input type="radio" name="taille_`+result[i].id+`" value="M">
+                <span>L</span><input type="radio" name="taille_`+result[i].id+`" value="L">
+                <span>XL</span><input type="radio" name="taille_`+result[i].id+`" value="XL">
             </div>
             <div class="nb_pizza">
                 <span>Nombre de pizza : </span>

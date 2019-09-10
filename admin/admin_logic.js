@@ -17,6 +17,7 @@ function ajoutPizza() {
         },
         success: function success(result) {
             alert("Pizza ajouté");
+            reload();
         },
         error: function error(erreur) {
             console.log("erreur");
@@ -28,38 +29,71 @@ function ajoutPizza() {
 
 function affichePizza() {
 
-    /*$.ajax({
-        url: "http://localhost/pizzeria/admin_server.php",
+    $.ajax({
+        url: "http://localhost/pizzeria/liste_pizza.php",
         type: 'GET',
         success: function success(result) {
             result = JSON.parse(result);
             for (var i = 0; i < result.length; i++) {
                 $(".liste").append(`
-         <div class="liste_pizza">
-            <input type="text" class="liste_nom_pizza" value="` 
-            // Nom pizza
-            + result[i].nom +`">
-        <div class="row_description">
-            <div>
-                <input type="text" class="liste_url_pizza" value="`
-                //url image pizza
-                + result[i].image + `">
-                <input type="text" class="liste_description_pizza" value="`
-                //description pizza
-                + result[i].description + `">
-            </div>
-            //
-             <img src="`
-             //photo pizza
-                + result[i].image + `" class="liste_image_pizza">
-        </div>
-     </div>`);
-            }
-        },
+                <div class="liste_pizza">
+                    <input type="text" class="liste_nom_pizza" value="`
+                    + result[i].nom +
+                    `">
+                    <div class="row_description">
+                        <div>
+                            <input type="text" class="liste_url_pizza" value="`
+                            + result[i].image +
+                            `">
+                            <input type="text" class="liste_description_pizza" value="`
+                            + result[i].description +
+                            `">
+                        </div>
+                        <img src="`
+                        + result[i].image +
+                        `" class="liste_image_pizza">
+                    </div>
+                    <div>
+                        <button class="modifier" onclick="modifier(` + result[i].nom + ", " + result[i].image + ", " + result[i].description + `)">Modifier</button>
+                        <button class="supprimer" value="`+ result[i].id + `"onclick="supprimer(`+result[i].id+`)">Supprimer</button>
+                    </div>
+                </div>
+                `    
+                );
+           }
+       },
 
+       error: function error(erreur) {
+           console.log(erreur);
+       },
+   });
+
+}
+
+function supprimer(id){
+
+    $.ajax({
+        url: "http://localhost/pizzeria/delete_pizza.php",
+        type: "POST",
+        data: {
+            id: id,
+        },
+        success: function success(result) {
+            alert("Pizza supprimé");
+            reload();
+        },
+        
         error: function error(erreur) {
-            console.log(erreur);
-        },
-    });*/
+            console.log("erreur");
+        }
+    });
+}
 
+function modifier(nom, image, description) {
+    alert(nom);
+}
+
+
+function reload(){
+    window.location.reload();
 }
