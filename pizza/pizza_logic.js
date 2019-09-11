@@ -21,6 +21,10 @@ function affichePizza() {
             // Image pizza
             + result[i].image +`"></u>
             </div>
+            <div class="description_pizza"><span>` 
+            // Description pizza
+            + result[i].description +`</span>
+            </div>
             <div class="taille">
                 <span>S</span><input type="radio" name="taille_`+result[i].id+`" value="S">
                 <span>M</span><input type="radio" name="taille_`+result[i].id+`" value="M">
@@ -56,7 +60,6 @@ function affichePizza() {
    });
 
 }
-
 
         // Ajoute la pizza commandé
 function ajoutPizza(idPizza) {    

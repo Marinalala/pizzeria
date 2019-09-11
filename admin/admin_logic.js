@@ -47,16 +47,16 @@ function affichePizza() {
             result = JSON.parse(result);
             for (var i = 0; i < result.length; i++) {
                 $(".liste").append(`
-                <div class="liste_pizza">
-                    <input type="text" class="liste_nom_pizza" value="`
+                <div class="liste_pizza" id="pizza_` + result[i].id + `" >
+                    <input type="text" id="pizza_` + result[i].id + `_nom" class="liste_nom_pizza" value="`
                     + result[i].nom +
                     `">
                     <div class="row_description">
                         <div>
-                            <input type="text" class="liste_url_pizza" value="`
+                            <input type="text" id="pizza_` + result[i].id + `_img" class="liste_url_pizza" value="`
                     + result[i].image +
                     `">
-                            <input type="text" class="liste_description_pizza" value="`
+                            <input type="text" id="pizza_` + result[i].id + `_desc" class="liste_description_pizza" value="`
                     + result[i].description +
                     `">
                         </div>
@@ -85,7 +85,7 @@ function affichePizza() {
 // Supprimer la pizza
 
 function supprimer(id) {
-
+    
     $.ajax({
         url: "http://localhost/pizzeria/delete_pizza.php",
         type: "POST",
@@ -105,38 +105,28 @@ function supprimer(id) {
 
 
 // Modifier le nom, l'image et la description de la pizza
-function modifier(id) {
+function modifier(idPizza) {
+    let nom = $("#pizza_" + idPizza + "_nom").val();
+    let img = $("#pizza_" + idPizza + "_img").val();
+    let desc = $("#pizza_" + idPizza + "_desc").val();
+    
     $.ajax({
-        url: "http://localhost/pizzeria/liste_pizza.php",
-        type: 'GET',
-        success: function success(result) {
-            result = JSON.parse(result);  
-            for (var i = 0; i < result.length; i++) {
-                    if (i == id){
-                        $.ajax({
-                            url: "http://localhost/pizzeria/modify_pizza.php",
-                            type: "POST",
-                            data: {
-                                id: result[i].id,
-                                nom: result[i].nom,
-                                image: result[i].image,
-                                description:result[i].description,
-                            },
-                            success: function success(result) {
-                                alert("Pizza modifié");
-                                reload();
-                            },
-                    
-                            error: function error(erreur) {
-                                console.log("erreur");
-                            }
-                        });
-                    }
-                }
-            },
-       
-        error: function error(erreur) {
-            console.log(erreur);
+        url: "http://localhost/pizzeria/modify_pizza.php",
+        type: "POST",
+        data: {
+            id: idPizza,
+            nom: nom,
+            image: img,
+            description: desc,
         },
+        success: function success(result) {
+            alert("Pizza modifié");
+            reload();
+        },
+
+        error: function error(erreur) {
+            console.log("erreur");
+        }
     });
 }
+
