@@ -1,31 +1,40 @@
-    // Exécute à la fin du chargement de la page
-$( document ).ready(affichePizza());
+// Exécute à la fin du chargement de la page
+$(document).ready(affichePizza());
 
-
-    // Afficher la liste des pizzas
+// Afficher la liste des pizzas
 function affichePizza() {
-
-   $.ajax({
-       url: "http://localhost/PIZZERIA/pizzeria/pizzeria_php/liste_pizza.php",
-       type: 'GET',
-       success: function success(result) {
-           result = JSON.parse(result);
-           for (var i = 0; i < result.length; i++) {
-               $(".liste").append(`
+  $.ajax({
+    url: "http://localhost/pizzeria/liste_pizza.php",
+    type: "GET",
+    success: function success(result) {
+      pizzas = JSON.parse(result);
+      for (var i = 0; i < pizzas.length; i++) {
+        $(".liste").append(
+          `
                <div class="pizza">
-            <div class="titre_pizza"><span>` 
+            <div class="titre_pizza"><span>` +
             // Nom pizza
-            + result[i].nom +`
+            pizzas[i].nom +
+            `
             </span></div>
-            <div class="img_pizza"><u><img src="` 
+            <div class="img_pizza"><u><img src="` +
             // Image pizza
-            + result[i].image +`"></u>
+            pizzas[i].image +
+            `"></u>
             </div>
             <div class="taille">
-                <span>S</span><input type="radio" name="taille_`+result[i].id+`" value="S">
-                <span>M</span><input type="radio" name="taille_`+result[i].id+`" value="M">
-                <span>L</span><input type="radio" name="taille_`+result[i].id+`" value="L">
-                <span>XL</span><input type="radio" name="taille_`+result[i].id+`" value="XL">
+                <span>S</span><input type="radio" name="taille_` +
+            pizzas[i].id +
+            `" value="S">
+                <span>M</span><input type="radio" name="taille_` +
+            pizzas[i].id +
+            `" value="M">
+                <span>L</span><input type="radio" name="taille_` +
+            pizzas[i].id +
+            `" value="L">
+                <span>XL</span><input type="radio" name="taille_` +
+            pizzas[i].id +
+            `" value="XL">
             </div>
             <div class="nb_pizza">
                 <span>Nombre de pizza : </span>
@@ -43,25 +52,52 @@ function affichePizza() {
                     </select>
             </div>
             <div>
-                <button class="ajouter" onclick="ajoutPizza(`+result[i].id+`)">Ajouter</button>
+                <button class="ajouter" onclick="ajoutPizza(` +
+            pizzas[i].id +
+            `, '` +
+            pizzas[i].nom +
+            `')">Ajouter</button>
             </div>
         </div>
-               `);
-           }
-       },
-
-       error: function error(erreur) {
-           console.log(erreur);
-       },
-   });
-
+               `
+        );
+      }
+    },
+    error: function error(erreur) {
+      console.log(erreur);
+    }
+  });
 }
 
+let cmdPizzas = [];
 
-        // Ajoute la pizza commandé
-function ajoutPizza(idPizza) {    
-   var taille = $('[name="taille"]:checked').val();
-   var nb_pizza = $('option:selected').val();
-   alert(taille);
-   alert(nb_pizza);
+// Ajoute la pizza commandé
+function ajoutPizza(idPizza, nomPizza) {
+  if (!idPizza && !nomPizza) {
+    return;
+  }
+
+  var taille = $('[name="taille_' + idPizza + '"]:checked').val();
+  var nb_pizza = $("option:selected").val();
+
+  if (!taille && !nb_pizza) {
+    alert("Erreur sur les données.");
+    return;
+  }
+
+  // On créer un objet pizza
+  var newPizza = {
+    id: idPizza,
+    nom: nomPizza,
+    taille: taille,
+    nb_pizza: nb_pizza
+  };
+
+  // ON pousse / ajoute l'objet au tableau global
+  cmdPizzas.push(newPizza);
+
+  // On prepare le JSON pour le stockage dans le localStorage
+  let json = JSON.stringify(cmdPizzas); // Moulinette du JSON
+  // On insert dans le localStorage
+  localStorage.setItem("pizzas", json); // F12 -> Application -> localstorage
 }
