@@ -39,6 +39,7 @@ $connection->close();
 // On vérifie que la mot de passe entré dans le formulaire et le mot de passe de la bdd est identique pour valider la connexion
 if (password_verify($password, $bdd_password)) {
     $tab = [
+        
         'valid' => true,
         'message' => "Bravo vous êtes connecté !",
         'redirect' => "../pizza/pizza.html"
