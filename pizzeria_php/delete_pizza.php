@@ -1,11 +1,10 @@
 <?php
-header("Access-Control-Allow-Origin: *");
 
-echo "salut";
+header("Access-Control-Allow-Origin: *");
 
 $bdd_id = $_POST['id'];
 
-$connection = new mysqli("localhost", "root", "", "pizza");
+$connection = new mysqli("localhost", "root", "", "pizzeria");
 
 $request = $connection->prepare("DELETE FROM `pizza` WHERE id ='$bdd_id'");
 

@@ -1,11 +1,130 @@
-#corps{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-image: url(../img/mur-de-pierre-moderne.png);
-    background-repeat: no-repeat;
-    background-size: 100vw;
-    font-family: "Ma Super Font";
-    width: 100vw;
-    height: 55vw;
+/*css du fond d'ecran*/
+#corps {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  background-image: url(../img/mur-de-pierre-moderne.png);
+  background-repeat: no-repeat;
+  background-size: 100vw;
+  font-family: "Ma Super Font";
+  width: 100vw;
+  background-color: antiquewhite;
+}
+
+#formulaire {
+  top: 20vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 50vw;
+  background-color: antiquewhite;
+  margin-top: 10vh;
+  padding: 3vw;
+}
+
+/*fleche retour*/
+#retour {
+  position: absolute;
+  top: 8vw;
+  left: 5vw;
+  width: 30vw;
+  height: 10vw;
+}
+#retour img {
+  width: 4vw;
+  height: 4vw;
+}
+
+/*css de la première ligne du tableau*/
+#title {
+  top: 5vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;  
+  text-align: center;
+
+  width: 50vw;
+}
+
+.pizz,
+.taille,
+.quantite,
+.total {
+  border: solid black 1px;
+  
+}
+.pizz {
+  width: 20vw;
+  height: 4vw;
+}
+.taille,
+.quantite {
+  width: 7vw;
+  height: 4vw;
+}
+.total {
+  height: 4vw;
+  width: 7vw;
+}
+
+/*css de la deuxième ligne du tableau*/
+#commande {
+  top: 9vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  text-align: center;
+
+  width: 50vw;
+}
+
+.pizz1,
+.taille1,
+.quantite1,
+.total1 {
+  border: solid black 1px;
+}
+.pizz1 {
+  width: 20vw;
+}
+.taille1,
+.quantite1 {
+  width: 7vw;
+}
+.total1 {
+  width: 7vw;
+}
+/* css du total*/
+#totaux {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin-top: -6vw;
+  margin-left: 0.7vw;
+  
+  text-align: center;
+}
+.pizz2 {
+  width: 20vw;
+  height: 10vw;
+}
+.taille2,
+.quantite2 {
+  width: 5vw;
+  height: 10vw;
+}
+.total2 {
+  height: 4vw;
+  width: 7vw;
+}
+.quantite2 {
+  margin-top: 10vw;
+}
+#val {
+  top: 25vw;
 }

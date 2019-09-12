@@ -17,7 +17,7 @@ function ajoutPizza() {
 
 
     $.ajax({
-        url: "http://localhost/pizzeria/admin_server.php",
+        url: "http://localhost/pizzeria/pizzeria_php/admin_server.php",
         type: "POST",
         data: {
             nom: nom,
@@ -32,7 +32,6 @@ function ajoutPizza() {
             console.log("erreur");
         }
     });
-
 }
 
 
@@ -41,7 +40,7 @@ function ajoutPizza() {
 function affichePizza() {
 
     $.ajax({
-        url: "http://localhost/pizzeria/liste_pizza.php",
+        url: "http://localhost/pizzeria/pizzeria_php/liste_pizza.php",
         type: 'GET',
         success: function success(result) {
             result = JSON.parse(result);
@@ -78,7 +77,6 @@ function affichePizza() {
             console.log(erreur);
         },
     });
-
 }
 
 
@@ -87,13 +85,13 @@ function affichePizza() {
 function supprimer(id) {
     
     $.ajax({
-        url: "http://localhost/pizzeria/delete_pizza.php",
+        url: "http://localhost/pizzeria/pizzeria_php/delete_pizza.php",
         type: "POST",
         data: {
             id: id,
         },
         success: function success(result) {
-            alert("Pizza supprimé");
+            alert(result);
             reload();
         },
 
@@ -111,7 +109,7 @@ function modifier(idPizza) {
     let desc = $("#pizza_" + idPizza + "_desc").val();
     
     $.ajax({
-        url: "http://localhost/pizzeria/modify_pizza.php",
+        url: "http://localhost/pizzeria/pizzeria_php/modify_pizza.php",
         type: "POST",
         data: {
             id: idPizza,
@@ -121,9 +119,8 @@ function modifier(idPizza) {
         },
         success: function success(result) {
             alert("Pizza modifié");
-            reload();
-        },
-
+            reload();},
+       
         error: function error(erreur) {
             console.log("erreur");
         }

@@ -13,7 +13,7 @@ $password = $_POST['password'];
 // Vérifier que toutes les informations ont bien été envoyé
 if (!$name || !$fname || !$adresse || !$email || !$telephone || !$password) {
     $tab = [
-        'message' => "Inscription réussi !"
+        'message' => "Inscription a !"
     ];
     echo json_encode($tab);
     exit(); // On termine le programme
@@ -22,7 +22,7 @@ if (!$name || !$fname || !$adresse || !$email || !$telephone || !$password) {
 // On vérifie la syntaxe de l'adresse email
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     $tab = [
-        'message' => "Inscription réussi !"
+        'message' => "Inscription b !"
     ];
     echo json_encode($tab);
     exit(); // On termine le programme
@@ -36,9 +36,11 @@ $connection = new mysqli("localhost", "root", "", "pizzeria");
 // Il faut préparer la requete SQL
 $request = $connection->prepare("INSERT INTO client (nom, adresse, telephone, fname, password, email) VALUES (?, ?, ?, ?,?,?)");
 // On renseigne les valeurs dynamiques de la requete
-$request->bind_param("ssssss", $name, $fname, $adresse, $email, $telephone, $hash);
+$request->bind_param("ssssss", $name,  $adresse, $telephone,  $fname,  $hash , $email);
 // On execute la requete
 $request->execute();
+
+
 // On ferme la connexion avec la base de donnée et la requette
 $request->close();
 $connection->close();

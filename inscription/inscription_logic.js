@@ -1,14 +1,14 @@
 function recupDesDonnees() {
   $.ajax({
-    url: "http://localhost/pizzeria/inscription.php",
+    url: "http://localhost/pizzeria/pizzeria_php/inscription.php",
     type: "POST",
     data: {
-      name: $("#name").val(),
+      nom: $("#name").val(),
       fname: $("#fname").val(),
       email: $("#email").val(),
-      adress: $("#adress").val(),
-      phone: $("#phone").val(),
-      pass: $("#pass").val()
+      adresse: $("#adress").val(),
+      telephone: $("#phone").val(),
+      password: $("#pass").val()
     },
     success: function success(result) {
       let data = JSON.parse(result);

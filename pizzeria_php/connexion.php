@@ -39,7 +39,6 @@ $connection->close();
 // On vérifie que la mot de passe entré dans le formulaire et le mot de passe de la bdd est identique pour valider la connexion
 if (password_verify($password, $bdd_password)) {
     $tab = [
-        
         'valid' => true,
         'message' => "Bravo vous êtes connecté !",
         'redirect' => "../pizza/pizza.html"
@@ -47,8 +46,8 @@ if (password_verify($password, $bdd_password)) {
     echo json_encode($tab);
 } else {
     $tab = [
-        'valid' => true,
-        'message' => "Bravo vous êtes connecté !",
+        'valid' => false,
+        'message' => "Mot de passe ou Email incorrect !",
         'redirect' => null
     ];
     echo json_encode($tab);

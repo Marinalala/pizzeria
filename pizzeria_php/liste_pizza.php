@@ -1,7 +1,7 @@
 
 <?php
 header("Access-Control-Allow-Origin: *");
-$connection = new mysqli("localhost", "root", "", "pizza");
+$connection = new mysqli("localhost", "root", "", "pizzeria");
 
 $request = $connection->prepare("SELECT id, nom, image, description FROM pizza");
 

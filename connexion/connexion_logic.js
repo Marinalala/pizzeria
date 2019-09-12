@@ -1,6 +1,6 @@
 function recupDesDonnees() {
   $.ajax({
-    url: "http://localhost/pizzeria/connexion.php",
+    url: "http://localhost/pizzeria/pizzeria_php/connexion.php",
     type: "POST",
     data: {
       email: $("#email").val(),

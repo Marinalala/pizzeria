@@ -7,7 +7,7 @@ header{
     justify-content: space-between;
 
     width: 100vw;
-    height : 7vw;
+    height : 11vw;
 }
 #menu{
     background-image: url(img/menu.png);
@@ -25,12 +25,12 @@ header{
     font-family: "Ma Super Font";
 }
 .nom{
-    font-size: 3em;
+    font-size: 5vw;
     padding: 0;
     margin: -15;
 }
 .tel{
-    font-size: 1.6em;
+    font-size: 3.5vw;
     padding: 0;
     margin: -15;
 }
